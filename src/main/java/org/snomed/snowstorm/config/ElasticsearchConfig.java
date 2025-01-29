@@ -158,6 +158,7 @@ public class ElasticsearchConfig extends ElasticsearchConfiguration {
 	protected void initialiseIndices(boolean deleteExisting) {
 		Set<Class<?>> entities = scanForEntities("org.snomed.snowstorm.core.data.domain");
 		entities.addAll(scanForEntities("org.snomed.snowstorm.fhir.domain"));
+		entities.addAll(scanForEntities("org.snomed.otf.request.domain"));
 		// Remove Annotation class as it is not a persistent class but extends ReferenceSetMember
 		entities.remove(Annotation.class);
 		logger.debug("Found {} entities to initialise", entities.size());
