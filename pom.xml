@@ -73,6 +73,10 @@
 			<artifactId>snomed-owl-toolkit</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.ihtsdo.otf.common</groupId>
+			<artifactId>otf-common</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.snomed.languages</groupId>
 			<artifactId>snomed-ecl-parser</artifactId>
 		</dependency>

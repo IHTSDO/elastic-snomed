@@ -35,6 +35,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
@@ -67,11 +68,13 @@ import static java.lang.Long.parseLong;
 		basePackages = {
 				"org.snomed.snowstorm.core.data.repositories",
 				"io.kaicode.elasticvc.repositories",
-				"org.snomed.snowstorm.fhir.repositories"
+				"org.snomed.snowstorm.fhir.repositories",
+				"org.snomed.otf.request.domain"
 		})
 @EnableConfigurationProperties
 @PropertySource(value = "classpath:application.properties", encoding = "UTF-8")
 @EnableAsync
+@ComponentScan(basePackages = "org.snomed.otf.request.domain")
 public abstract class Config extends ElasticsearchConfig {
 
 	public static final String DEFAULT_LANGUAGE_CODE = "en";
